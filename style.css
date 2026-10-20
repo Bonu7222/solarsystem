@@ -18,10 +18,11 @@ body {
 
 .stars-bg {
     position: absolute;
-    top: 30px;
-    left: 30px;
-    z-index: 10;
-    pointer-events: none;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(#ffffff 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.3;
+    z-index: 0;
 }
 
 .ui-header {
@@ -30,7 +31,6 @@ body {
     left: 30px;
     z-index: 10;
     pointer-events: none;
-
 }
 
 .ui-header h1 {
@@ -48,7 +48,7 @@ body {
 }
 
 @keyframes blink {
-    50% {opacity: 0;}
+    50% { opacity: 0; }
 }
 
 .ui-header p {
@@ -85,29 +85,29 @@ body {
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
     background: radial-gradient(circle, #fff700, #ff8c00, #ff0055);
     border-radius: 50%;
-    box-shadow: 0 0 50px #ff8c00, 0 0 100px #ff0055;
+    box-shadow: 0 0 60px #ff8c00, 0 0 120px #ff0055;
     animation: sunPulse 3s infinite alternate;
     cursor: pointer;
     z-index: 2;
 }
 
 @keyframes sunPulse {
-    0% {box-shadow: 0 0 50px #ff8c00, 0 0 100px #ff0055;}
-    100% {box-shadow: 0 0 80px #ff8c00, 0 0 150px #ff0055;}
+    0% { box-shadow: 0 0 60px #ff8c00, 0 0 120px #ff0055; }
+    100% { box-shadow: 0 0 90px #ff8c00, 0 0 180px #ff0055; }
 }
 
 .orbit {
     position: absolute;
     top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     transform-style: preserve-3d;
     pointer-events: none;
+    transform: translate(-50%, -50%) rotateX(75deg);
 }
 
 .planet-wrapper {
@@ -121,25 +121,27 @@ body {
 .planet {
     position: absolute;
     border-radius: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: inset -10px -10px 20px rgba(0,0,0,0.8);
+    transform: translate(-50%, -50%) rotateX(-75deg);
+    box-shadow: inset -8px -8px 15px rgba(0,0,0,0.8), 0 0 15px currentColor;
     transition: transform 0.3s, box-shadow 0.3s;
     z-index: 10;
 }
 
 .planet:hover {
-    transform: translate(-50%, -50%) scale(1.3);
-    box-shadow: 0 0 20px currentColor, inset -5px -5px 15px rgba(0,0,0,0.8);
+    transform: translate(-50%, -50%) rotateX(-75deg) scale(1.3);
+    box-shadow: 0 0 30px currentColor, inset -5px -5px 10px rgba(0,0,0,0.8);
+    z-index: 20;
 }
 
 .planet-label {
     position: absolute;
-    top: 20px;
+    bottom: -30px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 10px;
+    font-size: 14px;
+    font-weight: bold;
     color: #fff;
-    text-shadow: 0 0 5px #000;
+    text-shadow: 0 0 8px #000, 0 0 5px currentColor;
     white-space: nowrap;
     opacity: 0;
     transition: opacity 0.3s;
@@ -153,11 +155,12 @@ body {
 .saturn-ring {
     position: absolute;
     top: 50%; left: 50%;
-    width: 220%;
-    height: 50%;
-    border: 4px solid rgba(255,255,255,0.3);
+    width: 240%;
+    height: 60%;
+    border: 6px solid rgba(255, 255, 255, 0.4);
     border-radius: 50%;
     transform: translate(-50%, -50%) rotateX(75deg);
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
     pointer-events: none;
 }
 
@@ -181,17 +184,16 @@ body {
 }
 
 .modal-content {
-    background: rgba(20,20,30,0.9);
-    border: 1px solid rgba(0,255,255,0.3);
-    box-shadow: 0 0 30px rgba(0,255,255,0.2);
+    background: rgba(20, 20, 30, 0.9);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
     padding: 40px;
     border-radius: 20px;
-    width: 400px;
+    width: 420px;
     max-width: 90%;
     position: relative;
     transform: scale(0.9);
     transition: transform 0.3s;
-
 }
 
 .info-modal.active .modal-content {
@@ -215,8 +217,10 @@ body {
 
 .modal-content h2 {
     font-size: 32px;
+    color: #00ffff;
     text-shadow: 0 0 10px #00ffff;
     margin-bottom: 20px;
+    letter-spacing: 2px;
 }
 
 .planet-stats {

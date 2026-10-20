@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>3D Interactive Solar System</title>
-        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Interactive Solar System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-        <div class="stars-bg" id="stars-bg"></div>
+    <div class="stars-bg" id="stars-bg"></div>
 
-            <header class="ui-header">
-                <h1>SOLAR<span>_</span>SYSTEM</h1>
-                <p>Drag to rotate • Click a planet to explore</p>
-            </header>
+    <header class="ui-header">
+        <h1>SOLAR<span>_</span>SYSTEM</h1>
+        <p>Drag to rotate • Click a planet to explore</p>
+    </header>
 
-            <div class="scene" id="scene">
-                <div class="solar-system" id="solar-system">
+    <div class="scene" id="scene">
+        <div class="solar-system" id="solar-system">
+            
+            <div class="sun" id="sun"></div>
+            
+            <div id="planets-container"></div>
+            
+        </div>
+    </div>
 
-                    <div class="sun" id="sun"></div>
-                    <div id="planets-container"></div>
-
-                </div>
+    <div class="info-modal" id="info-modal">
+        <div class="modal-content">
+            <button class="close-btn" id="close-btn">×</button>
+            <h2 id="planet-name">EARTH</h2>
+            <div class="planet-stats">
+                <p><span>Type:</span> <span id="planet-type">Terrestrial</span></p>
+                <p><span>Distance from Sun:</span> <span id="planet-dist">149.6M km</span></p>
+                <p><span>Orbital Period:</span> <span id="planet-period">365.25 Days</span></p>
             </div>
+            <p class="planet-desc" id="planet-desc">Earth is the third planet from the Sun and the only astronomical object known to harbor life.</p>
+        </div>
+    </div>
 
-            <div class="info-modal" id="info-modal">
-                <div class="modal-content">
-                    <button class="close-btn" id="clos-btn">×</button>
-                    <h2 id="planet-name">EARTH</h2>
-                    <div class="planets-stats">
-                        <p><span>Type:</span> <span id="planet-type">Terrestrial</span></p>
-                        <p><span>Distance from Sun:</span> <span id="planet-dist">149.6M km</span></p>
-                        <p><span>Orbital Period</span> <span id="planet-period">365.25 Days</span></p>
-                    </div>
-
-                    <p class="planet-desc" id="planet-desc">Earth is the third planet from the Sun and the only astronomical object known to harbor life.</p>
-                </div>
-            </div>
-       
-            <script src="app.js"></script>
-    </body>
+    <script src="app.js"></script>
+</body>
 </html>
